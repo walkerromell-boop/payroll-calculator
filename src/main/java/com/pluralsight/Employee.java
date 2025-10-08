@@ -51,8 +51,8 @@ public class Employee {
 
     public String toString() {
         return String.format(
-                "ID: %d| Name %s | Hours Worked: %.2f| Payrate: $%.2f| Total Pay: $%.2f",
-                employeeId,name,hoursWorked,payRate,getTotalPay()
+                "ID: %d| Name %s | Total Pay: $%.2f",
+                employeeId,name,getTotalPay()
         );
     }
 }
