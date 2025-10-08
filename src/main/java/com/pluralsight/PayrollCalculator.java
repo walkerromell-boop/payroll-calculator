@@ -12,14 +12,14 @@ public class PayrollCalculator {
         try {
             // create a FileReader object connected to the File
             FileReader fileReader = new FileReader("employees.csv");
-            // create a BufferedReader to manage input stream
+            // create a BufferedReader to manage line stream
             BufferedReader bufReader = new BufferedReader(fileReader);
-            String input;
+            String line;
             // read until there is no more data
 
             bufReader.readLine(); //This skips the first line if it's a header
-            while ((input = bufReader.readLine()) != null && count < employees.length) {
-                String[] parts = input.split("\\|");
+            while ((line = bufReader.readLine()) != null && count < employees.length) {
+                String[] parts = line.split("\\|");
 
                 int id = Integer.parseInt(parts[0]);
                 String name = parts[1];

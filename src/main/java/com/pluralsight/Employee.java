@@ -13,7 +13,7 @@ public class Employee {
         this.payRate = payRate;
     }
 
-    public double getTotalPay() {
+    public double getGrosspay() {
         return hoursWorked * payRate;
     }
 
@@ -21,9 +21,6 @@ public class Employee {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
 
     public String getName() {
         return name;
@@ -52,7 +49,7 @@ public class Employee {
     public String toString() {
         return String.format(
                 "ID: %d| Name %s | Total Pay: $%.2f",
-                employeeId,name,getTotalPay()
+                employeeId,name, getGrosspay()
         );
     }
 }
