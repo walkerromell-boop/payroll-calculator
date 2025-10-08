@@ -1,8 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.regex.Pattern;
 
 public class PayrollCalculator {
@@ -10,6 +8,28 @@ public class PayrollCalculator {
         Employee[] employees = new Employee[10];
         int nextEmployee = 0;
 
+        readEmployees(employees, nextEmployee);
+        try {
+            // create a FileWriter
+            FileWriter fileWriter = new FileWriter("text.txt", true);
+            // create a BufferedWriter
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            // write to the file
+            bufferedWriter.write("line 1 is here \n");
+            bufferedWriter.write("line 2 is here \n");
+            bufferedWriter.write("line 3 is here \n");
+
+            // close the writer
+            bufferedWriter.close();
+        } catch (IOException e) {
+            System.out.println("ERROR: An unexpected error occurred");
+            e.getStackTrace();
+        }
+
+
+    }
+
+    private static void readEmployees(Employee[] employees, int nextEmployee) {
         try {
             // create a FileReader object connected to the File
             FileReader fileReader = new FileReader("employees.csv");
@@ -37,10 +57,8 @@ public class PayrollCalculator {
             // display stack trace if there was an error
             e.printStackTrace();
         }
-        for (int i=0;i<nextEmployee;i++){
+        for (int i = 0; i< nextEmployee; i++){
             System.out.println(employees[i]);
         }
-        
-
     }
 }
