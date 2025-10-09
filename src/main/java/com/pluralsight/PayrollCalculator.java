@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class PayrollCalculator {
     public static void main(String[] args) {
-        Employee[] employees = new Employee[10];
+        Employee[] employees = new Employee[8];
         int nextEmployee = 0;
         Scanner scanner = new Scanner(System.in);
 
@@ -62,6 +62,10 @@ public class PayrollCalculator {
 
             bufReader.readLine(); // skip header
             while ((line = bufReader.readLine()) != null) {
+                // Skip blank lines
+                if (line.trim().isEmpty()) {
+                    continue;
+                }
                 String[] parts = line.split(Pattern.quote("|"));
 
                 int id = Integer.parseInt(parts[0]);
