@@ -48,7 +48,7 @@ public class Employee {
 
     public String toString() {
         return String.format(
-                "ID: %d| Name %s | Total Pay: $%.2f",
+                " %d|  %s |  $%.2f",
                 employeeId,name, getGrosspay()
         );
     }

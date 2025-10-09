@@ -25,7 +25,7 @@ public class PayrollCalculator {
             // create a BufferedWriter
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             // write to the file
-            bufferedWriter.write("Id| Name| Gross Pay|");
+            bufferedWriter.write("Id| Name| Gross Pay");
             bufferedWriter.newLine();
 
 //            Loop through employees and write each one
@@ -33,7 +33,7 @@ public class PayrollCalculator {
                 Employee emp = employees[i];
 
 //                write formatted text to the file
-                String line = String.format("id: %d, name: %s,grosspay:%.2f  "
+                String line = String.format("id, %d, name: %s,grosspay:%.2f  "
                         , emp.getEmployeeId(), emp.getName(), emp.getGrosspay());
 
                 bufferedWriter.write(line);
